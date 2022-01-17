@@ -57,7 +57,13 @@ function setTime() {
 
   // Needles
 
-  hourEl.style.transform = "translate(-50%, -100%) rotate(0deg)";
+  hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+    hoursForClock,
+    0,
+    11,
+    0,
+    360
+  )}deg)`;
   minuteEl.style.transform = `translate(-50%, -100%) rotate(0deg)`;
   secondEl.style.transform = `translate(-50%, -100%) rotate(0deg)`;
 
