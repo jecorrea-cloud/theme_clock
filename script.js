@@ -43,3 +43,30 @@ toggle.addEventListener("click", (e) => {
     e.target.innerHTML = "Light mode";
   }
 });
+
+// Clock functionality
+
+function setTime() {
+  const time = new Date();
+  const month = time.getMonth();
+  const day = time.getDay();
+  const hours = time.getHours();
+  const hoursForClock = hours % 12;
+  const minutes = time.getMinutes();
+  const seconds = time.getSeconds();
+
+  // Needles
+
+  hourEl.style.transform = "translate(-50%, -100%) rotate(0deg)";
+  minuteEl.style.transform = `translate(-50%, -100%) rotate(0deg)`;
+  secondEl.style.transform = `translate(-50%, -100%) rotate(0deg)`;
+
+  // StackOverflow https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+  const scale = (num, in_min, in_max, out_min, out_max) => {
+    return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+  };
+}
+
+setTime();
+
+setInterval(setTime, 1000);
