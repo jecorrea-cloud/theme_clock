@@ -64,8 +64,20 @@ function setTime() {
     0,
     360
   )}deg)`;
-  minuteEl.style.transform = `translate(-50%, -100%) rotate(0deg)`;
-  secondEl.style.transform = `translate(-50%, -100%) rotate(0deg)`;
+  minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+    minutes,
+    0,
+    59,
+    0,
+    360
+  )}deg)`;
+  secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+    seconds,
+    0,
+    59,
+    0,
+    360
+  )}deg)`;
 
   // StackOverflow https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
   const scale = (num, in_min, in_max, out_min, out_max) => {
